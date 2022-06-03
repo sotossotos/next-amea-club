@@ -12,6 +12,7 @@ const Layout:React.FC<Props>=({
     return(
         <>
             <Global styles = {{...global}}/>
+            {children}
         </>
     )
 }
