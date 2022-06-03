@@ -1,2 +1,2 @@
-# next-amea-club
+# Hayate Network  ♿AMEA♿
 Hayate Network AMEA Club
