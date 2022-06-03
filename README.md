@@ -2,7 +2,7 @@
 
 ## Hayate Network AMEA Club website
 
-Main purpose is to display/promote any available live trovo streams from the Hayate Network (aka AMEA Club/Institution). A streamer list i
+Main purpose is to display/promote any available live trovo streams from the Hayate Network (aka AMEA Club/Institution). Below are the supported streamers.
 
 ♿AMEA♿ Streamers:
 
