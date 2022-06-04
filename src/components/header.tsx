@@ -2,15 +2,16 @@ import React from 'react'
 import Image from 'next/image'
 import logo from '../public/HayateNetworkIcon.jpg'
 import { Flex, ThemeUIStyleObject, Link } from 'theme-ui'
+import { useBreakpointIndex } from '@theme-ui/match-media'
 
 const wrapperSx: ThemeUIStyleObject = {
     backgroundColor: '#1E2128',
-    width:'100vw'
+    width:'100%'
 }
 
 const menuSx: ThemeUIStyleObject = {
     marginTop:'0.75rem',
-    marginX: ['1vw','1wv','1wv','18vw'],
+    marginX: ['1wv','9wv','18vw'],
 }
 
 const menuTitleSx: ThemeUIStyleObject = {
@@ -18,12 +19,15 @@ const menuTitleSx: ThemeUIStyleObject = {
     color: 'white',
     textDecoration:'none',
     marginY:'auto',
+    flexShrink:0,
     marginLeft:'1rem'
 }
 
 export const Header = () => {
 
-    const isMobile = true
+    const breakpoint = useBreakpointIndex({ defaultIndex: 2 })
+    const isMobile: boolean = breakpoint < 1
+
     return (
         <Flex sx = {wrapperSx}>
             <Flex sx= { menuSx }>

@@ -1,16 +1,26 @@
 import React from 'react'
 import YouTube, { YouTubeProps } from 'react-youtube'
+import { useBreakpointIndex, useResponsiveValue } from '@theme-ui/match-media'
 import { Flex, Heading, ThemeUIStyleObject } from 'theme-ui'
 
 export const Anthem = () => {
+
     const onPlayerReady: YouTubeProps['onReady'] = (event) => {
         // access to player in all event handlers via event.target
         event.target.playVideo()
         }
+    
+    const youtubeHeight = useResponsiveValue(['195','234','390'],{
+        defaultIndex:2,
+    })
+
+    const youtubeWidth = useResponsiveValue(['320','384','640'],{
+        defaultIndex:2,
+    })
 
     const opts: YouTubeProps['opts'] = {
-        height: '390',
-        width: '640',
+        height: youtubeHeight,
+        width: youtubeWidth,
         playerVars: {
             autoplay: 1,
             loop: 1
@@ -20,18 +30,19 @@ export const Anthem = () => {
     const wrapperSx: ThemeUIStyleObject = {
         marginTop:'2.75rem',
         flexDirection:'column',
-        marginX: ['1vw','1wv','1wv','18vw'],
-        alignItems:'center'
+        marginX: ['1wv','9wv','18vw'],
+        alignItems:'center',
     }
 
     const anthemTitleSx: ThemeUIStyleObject = {
         marginBottom:'0.5rem',
         marginLeft:'0.25rem',
-        fontSize:'3rem'
+        fontSize:['1.5rem','2rem','3rem'],
     }
     
     const anthemSubTitleSx: ThemeUIStyleObject = {
-        marginY: '1rem'
+        marginY: '1rem',
+        fontSize:['0.8rem','1rem','1.5rem']
     }
 
     return (
