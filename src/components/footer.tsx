@@ -1,10 +1,12 @@
 import React from 'react'
-import { Flex, ThemeUIStyleObject, Link } from 'theme-ui'
+import { Flex, ThemeUIStyleObject, Link, Text } from 'theme-ui'
 import { useBreakpointIndex } from '@theme-ui/match-media'
 
 const wrapperSx: ThemeUIStyleObject = {
     backgroundColor: '#1E2128',
-    justifyContent:'flex-end'
+    position:'absolute',
+    bottom:'0',
+    // justifyContent:'flex-end'
 }
 
 const footerSx: ThemeUIStyleObject = {
@@ -21,6 +23,16 @@ const footerTitleSx: ThemeUIStyleObject = {
     textDecoration:'none'
 }
 
+const creatorSx: ThemeUIStyleObject = {
+    marginBottom:['0','0','0.15rem'],
+    fontSize:['0.75rem','1rem'],
+    alignSelf:'flex-end',
+    '::before' :{
+        content:'""',
+        marginLeft:'0.5rem'
+    }
+}
+
 export const Footer = () => {
 
     const breakpoint = useBreakpointIndex({ defaultIndex: 2 })
@@ -29,7 +41,8 @@ export const Footer = () => {
     return (
         <Flex sx = {wrapperSx}>
             <Flex sx= { footerSx }>
-                <Link sx={footerTitleSx} href={'https://www.youtube.com/channel/UCJrwvP4Hgkq2_YJB8veP-4w'} target= '_blank' >Hayate Network © 2022</Link>
+                <Link sx={footerTitleSx} href={'https://www.youtube.com/channel/UCJrwvP4Hgkq2_YJB8veP-4w'} target= '_blank'>Hayate Network © 2022</Link>
+                <Text sx={creatorSx}>by CynicalSoToS</Text>
             </Flex>
         </Flex>
     )

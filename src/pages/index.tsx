@@ -8,9 +8,9 @@ import { Footer } from '../components/footer'
 const Home: NextPage = () => {
 
   const pageSx:ThemeUIStyleObject = {
-    minHeight:'100%',
+    minHeight:'100vh',
     flexDirection:'column',
-    alignItems:'stretch'
+    position:'relative'
   }
 
   return (
@@ -19,9 +19,8 @@ const Home: NextPage = () => {
         <title>Hayate-Network</title>
       </Head>
         <Header/>
-        <Box sx={{minHeight:'49rem'}}>
+        <Box>
           <Anthem/>
-
         </Box>
         <Footer/>
     </Flex>
