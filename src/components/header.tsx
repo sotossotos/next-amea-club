@@ -1,6 +1,6 @@
 import React from 'react'
 import Image from 'next/image'
-import logo from '../public/HayateNetworkIcon.jpg'
+import logo from '../../public/HayateNetworkIcon.jpg'
 import { Flex, ThemeUIStyleObject, Link } from 'theme-ui'
 import { useBreakpointIndex } from '@theme-ui/match-media'
 
