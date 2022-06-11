@@ -49,7 +49,7 @@ export const Anthem = () => {
         <Flex sx={wrapperSx}>
             <Heading sx={anthemTitleSx}> Hayate Network Anthem </Heading>
             <YouTube videoId="B_Kb543yo38" opts={opts} onReady={onPlayerReady}/>
-            <Heading sx={anthemSubTitleSx}>ΓΜΧΤ ΣΟΥ ΠΟΥ ΕΙΝΑΙ ΤΑ ΤΡΟΒΟ ΣΤΡΕΑΜΣ</Heading>
+            <Heading sx={anthemSubTitleSx}>ΕΙΧΑΜΕ ΤΡΟΒΟ ΣΤΡΕΑΜΣ, ΛΕΥΤΑ ΥΠΗΡΧΑΝ</Heading>
         </Flex>
   )
 }
