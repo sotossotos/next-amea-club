@@ -33,3 +33,7 @@ yarn-error.log*
 
 # typescript
 *.tsbuildinfo
+
+# REST Client VS Code Extension
+*.http
+*.rest
