@@ -23,7 +23,7 @@ const menuTitleSx: ThemeUIStyleObject = {
     marginLeft:'1rem'
 }
 
-export const Header = () => {
+const Header = () => {
 
     const breakpoint = useBreakpointIndex({ defaultIndex: 2 })
     const isMobile: boolean = breakpoint < 1

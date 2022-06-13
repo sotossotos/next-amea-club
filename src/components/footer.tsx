@@ -33,7 +33,7 @@ const creatorSx: ThemeUIStyleObject = {
     }
 }
 
-export const Footer = () => {
+const Footer = () => {
 
     const breakpoint = useBreakpointIndex({ defaultIndex: 2 })
     const isMobile: boolean = breakpoint < 1
