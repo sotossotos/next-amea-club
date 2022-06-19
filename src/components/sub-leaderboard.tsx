@@ -24,15 +24,24 @@ const wrapperSx: ThemeUIStyleObject = {
 }
 
 const leaderboardTitleSx: ThemeUIStyleObject = {
-  marginBottom:'0.5rem',
+  marginBottom:'1.5rem',
   alignSelf:'center',
+  borderRadius:'4rem',
+  borderStyle:'solid',
+  padding:'1rem',
+  borderWidth:'0.15rem',
+  borderColor:'white',
   fontSize:['1.5rem','2rem','2.25rem'],
 }
 
 const streamerCardSx: ThemeUIStyleObject = {
-  marginY:'1.5rem',
+  marginBottom:'1.5rem',
   marginX:'0.25rem',
-  
+  borderRadius:'0.5rem',
+  padding:'0.5rem',
+  borderStyle:'solid',
+  borderWidth:'0.15rem',
+  borderColor:'white'
 }
 
 const profilePicSx = {
