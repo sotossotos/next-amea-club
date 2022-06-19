@@ -10,6 +10,7 @@ import axios, { AxiosRequestConfig, AxiosResponse } from 'axios'
 
 interface Streamer {
   is_live: boolean
+  current_viewers:number
   username: string
   channel_url: string
   profile_pic:string
@@ -32,8 +33,8 @@ export const getStaticProps: GetStaticProps = async(context) => {
       username:`${user}`
     }
     const res = await axios.post(trovo_url,json,requestConfig)
-    const {is_live,followers,subscriber_num,profile_pic,channel_url,username} = res.data
-    const streamerInfo: Streamer = {is_live,username,profile_pic,followers,channel_url,subscriber_num}
+    const {is_live,followers,subscriber_num,profile_pic,current_viewers,channel_url,username} = res.data
+    const streamerInfo: Streamer = {is_live,username,profile_pic,followers,channel_url,current_viewers,subscriber_num}
     allResp.push(streamerInfo)
   }
 
