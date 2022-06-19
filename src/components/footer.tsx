@@ -4,7 +4,7 @@ import { useBreakpointIndex } from '@theme-ui/match-media'
 
 const wrapperSx: ThemeUIStyleObject = {
     backgroundColor: '#1E2128',
-    position:'absolute',
+    position:'relative',
     bottom:'0',
     // justifyContent:'flex-end'
 }
