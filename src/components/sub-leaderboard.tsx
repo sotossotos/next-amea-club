@@ -70,7 +70,6 @@ const SubNumberSx: ThemeUIStyleObject = {
 }
 
 const SubLeaderboard: React.FC<SubLeaderboardProps> = (props) => {
-  console.log(props)
   const sortedStreamersDescending = props.streamersInfo.sort((curr,next)=>next.subscriber_num-curr.subscriber_num)
   return(
     <Flex sx={wrapperSx}>
