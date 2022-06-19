@@ -11,7 +11,7 @@ const wrapperSx: ThemeUIStyleObject = {
 
 const menuSx: ThemeUIStyleObject = {
     marginTop:'0.75rem',
-    marginX: ['1wv','9wv','18vw'],
+    marginX: ['4vw','9vw','18vw'],
 }
 
 const menuTitleSx: ThemeUIStyleObject = {
@@ -23,7 +23,7 @@ const menuTitleSx: ThemeUIStyleObject = {
     marginLeft:'1rem'
 }
 
-export const Header = () => {
+const Header = () => {
 
     const breakpoint = useBreakpointIndex({ defaultIndex: 2 })
     const isMobile: boolean = breakpoint < 1

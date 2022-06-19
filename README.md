@@ -2,16 +2,28 @@
 
 ## Hayate Network AMEA Club website
 
-Main purpose is to display/promote any available live trovo streams from the Hayate Network (aka AMEA Club/Institution). Below are the supported streamers.
+Main purpose is to display/promote the anthem of hayate network. It may also display any available live trovo streams from the Hayate Network (aka AMEA Club/Institution). Below are the supported streamers.
 
 ♿AMEA♿ Streamers:
 
 - PerfectBalance1
+- AerakisMono
 - gusino
 - Parentalcontrol
 - panagiwwta_
+- iwannaaa98
 
 ## Getting Started
+
+Requires:
+
+Node version 14+
+
+Installation:
+
+```bash
+yarn or yarn install --frozen-lockfile
+```
 
 First, run the development server:
 

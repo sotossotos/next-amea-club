@@ -3,11 +3,11 @@ import YouTube, { YouTubeProps } from 'react-youtube'
 import { useBreakpointIndex, useResponsiveValue } from '@theme-ui/match-media'
 import { Flex, Heading, ThemeUIStyleObject } from 'theme-ui'
 
-export const Anthem = () => {
+const Anthem = () => {
 
     const onPlayerReady: YouTubeProps['onReady'] = (event) => {
         // access to player in all event handlers via event.target
-        event.target.playVideo()
+        event.target.pauseVideo()
         }
     
     const youtubeHeight = useResponsiveValue(['195','234','312'],{
