@@ -114,8 +114,12 @@ const SubLeaderboard: React.FC<SubLeaderboardProps> = (props) => {
           <Heading sx={usernameTitleSx}>{item.username}</Heading>
           <FollowHeart size={32}/>
           <Heading sx={FollowNumberSx}>{(item.followers/1000).toFixed(1)}K</Heading>
-          <ViewersEye size={32}/>
-          <Heading sx={ViewerNumberSx}>{item.current_viewers > 999 ?(item.current_viewers/1000).toFixed(2):item.current_viewers}</Heading>
+          {item.is_live &&(
+          <>
+            <ViewersEye size={32}/> 
+            <Heading sx={ViewerNumberSx}>{item.current_viewers > 999 ?(item.current_viewers/1000).toFixed(2):item.current_viewers}</Heading>
+          </>)
+          }
           <Flex sx={{marginLeft:'auto'}}>
             <Heading sx={SubNumberSx}>{item.subscriber_num}</Heading>
             <SubStar size={32}/>
