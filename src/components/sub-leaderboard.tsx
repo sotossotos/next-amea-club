@@ -69,10 +69,13 @@ const FollowHeart = styled(AiFillHeart)`
 `
 
 const LiveIcon = styled(VscCircleFilled)`
-  color: red;
+  color: #EB0400;
+  border-radius: 1rem;
+  border-width: 1px;
+  background: rgba(0,0,0,0.4);
   position: absolute;
-  top: 0rem;
-  left: 0rem;
+  top: 0.12rem;
+  left: 0.12rem;
 `
 const ViewersEye = styled(AiFillEye)`
   margin-top: auto;
@@ -106,7 +109,7 @@ const SubLeaderboard: React.FC<SubLeaderboardProps> = (props) => {
         <Flex sx={streamerCardSx} key={`streamer-card-${index}`}>
           <Link sx={{position:'relative'}} href={`${item.channel_url}`} target='_blank'>
             <Image style={profilePicSx} src={`${item.profile_pic}`} alt='profile-pic' width='64' height='64'/>
-            {item.is_live && <LiveIcon size={24}/>}
+            {item.is_live && <LiveIcon size={18}/>}
           </Link>
           <Heading sx={usernameTitleSx}>{item.username}</Heading>
           <FollowHeart size={32}/>
