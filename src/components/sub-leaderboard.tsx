@@ -117,7 +117,7 @@ const SubLeaderboard: React.FC<SubLeaderboardProps> = (props) => {
           {item.is_live &&(
           <>
             <ViewersEye size={32}/> 
-            <Heading sx={ViewerNumberSx}>{item.current_viewers > 999 ?(item.current_viewers/1000).toFixed(2):item.current_viewers}</Heading>
+            <Heading sx={ViewerNumberSx}>{item.current_viewers > 999 ?`${(item.current_viewers/1000).toFixed(2)}K`:item.current_viewers}</Heading>
           </>)
           }
           <Flex sx={{marginLeft:'auto'}}>
