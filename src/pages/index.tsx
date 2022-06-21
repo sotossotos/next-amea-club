@@ -35,7 +35,7 @@ interface HomePageProps {
 
 const Home: NextPage<HomePageProps> = (props) => {
 
-  const { data } = useSWR('/api/streamer-info',fetcher,{ refreshInterval: 1000 })
+  const { data } = useSWR('/api/streamer-info',fetcher,{ refreshInterval: 5000 })
   
   const streamersInfo = data ? data.streamersInfo:props.streamersInfo
   const pageSx:ThemeUIStyleObject = {
