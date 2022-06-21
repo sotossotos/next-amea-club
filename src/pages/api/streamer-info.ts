@@ -21,18 +21,24 @@ const streamerInfo = async(req: NextApiRequest, res: NextApiResponse) => {
         'Client-ID':process.env.TROVO_CLIENT_ID||'',
       }
     }
-    const allResp: any[] = []
+    const streamersInfo: any[] = []
+    const axiosPosts: any[] = []
     for (const user of usernames){
       const json = {
         username:`${user}`
       }
-      const res = await axios.post(trovo_url,json,requestConfig)
-      const {is_live,followers,subscriber_num,profile_pic,current_viewers,channel_url,username} = res.data
+      axiosPosts.push( axios.post(trovo_url,json,requestConfig))
+    }
+
+    const responses = await axios.all(axiosPosts)
+
+    for (const response of responses){
+      const {is_live,followers,subscriber_num,profile_pic,current_viewers,channel_url,username} = response.data
       const streamerInfo: Streamer = {is_live,username,profile_pic,followers,channel_url,current_viewers,subscriber_num}
-      allResp.push(streamerInfo)
+      streamersInfo.push(streamerInfo)
     }
     res.send({
-      streamersInfo:[...allResp]
+      streamersInfo
     })
 }
 
