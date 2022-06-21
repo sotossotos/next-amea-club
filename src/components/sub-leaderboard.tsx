@@ -35,15 +35,15 @@ const leaderboardTitleSx: ThemeUIStyleObject = {
   fontSize:['1.5rem','2rem','2.25rem'],
 }
 
-const streamerCardSx: ThemeUIStyleObject = {
+const streamerCardSx = (is_live:boolean): ThemeUIStyleObject => ({
   marginBottom:'1.5rem',
   marginX:'0.25rem',
   borderRadius:'0.5rem',
   padding:'0.5rem',
   borderStyle:'solid',
   borderWidth:'0.15rem',
-  borderColor:'white'
-}
+  borderColor: is_live?'#19D66B':'white'
+})
 
 const profilePicSx = {
   borderRadius:'0.75rem',
@@ -106,7 +106,7 @@ const SubLeaderboard: React.FC<SubLeaderboardProps> = (props) => {
     <Flex sx={wrapperSx}>
       <Heading sx={leaderboardTitleSx}>Subs Leaderboard</Heading>
       {sortedStreamersDescending.map((item: Streamer,index:number) =>(
-        <Flex sx={streamerCardSx} key={`streamer-card-${index}`}>
+        <Flex sx={streamerCardSx(item.is_live)} key={`streamer-card-${index}`}>
           <Link sx={{position:'relative'}} href={`${item.channel_url}`} target='_blank'>
             <Image style={profilePicSx} src={`${item.profile_pic}`} alt='profile-pic' width='64' height='64'/>
             {item.is_live && <LiveIcon size={18}/>}

@@ -4,9 +4,9 @@ import { Flex, Box, ThemeUIStyleObject } from 'theme-ui'
 import Header from '../components/header'
 import Footer from '../components/footer'
 import SubLeaderboard  from '../components/sub-leaderboard'
-import { GetStaticProps } from 'next'
-import { InferGetStaticPropsType } from 'next'
-import axios, { AxiosRequestConfig, AxiosResponse } from 'axios'
+import { GetServerSideProps  } from 'next'
+import axios from 'axios'
+import useSWR from 'swr'
 
 interface Streamer {
   is_live: boolean
@@ -18,31 +18,14 @@ interface Streamer {
   subscriber_num: number
 }
 
-export const getStaticProps: GetStaticProps = async(context) => {
-  const usernames:string[] = ['PerfectBalance1','AerakisMono','Parentalcontrol','panagiwwta_','diosicon','gusino','Sefiroman']
-  const trovo_url = 'https://open-api.trovo.live/openplatform/channels/id'
-  const requestConfig: AxiosRequestConfig = {
-    headers: {
-      'Content-type':'application/json',
-      'Client-ID':process.env.TROVO_CLIENT_ID||'',
-    }
-  }
-  const allResp: any[] = []
-  for (const user of usernames){
-    const json = {
-      username:`${user}`
-    }
-    const res = await axios.post(trovo_url,json,requestConfig)
-    const {is_live,followers,subscriber_num,profile_pic,current_viewers,channel_url,username} = res.data
-    const streamerInfo: Streamer = {is_live,username,profile_pic,followers,channel_url,current_viewers,subscriber_num}
-    allResp.push(streamerInfo)
-  }
+const fetcher = (url: string) => axios.get(url).then(r => r.data)
 
+export const getServerSideProps: GetServerSideProps  = async(context) => {
+  const apiResp = await axios.get(`http://${context.req.headers.host}/api/streamer-info`)
   return {
     props: {
-      streamersInfo:[...allResp]
-    },
-    revalidate: 1
+      streamersInfo:[...apiResp.data.streamersInfo]
+    }
   }
 }
 
@@ -51,6 +34,10 @@ interface HomePageProps {
 }
 
 const Home: NextPage<HomePageProps> = (props) => {
+
+  const { data } = useSWR('/api/streamer-info',fetcher,{ refreshInterval: 1000 })
+  
+  const streamersInfo = data ? data.streamersInfo:props.streamersInfo
   const pageSx:ThemeUIStyleObject = {
     minHeight:'100vh',
     flexDirection:'column',
@@ -62,7 +49,7 @@ const Home: NextPage<HomePageProps> = (props) => {
         <Header/>
         <Box>
           <Anthem/>
-          <SubLeaderboard streamersInfo={[...props.streamersInfo]}/>
+          <SubLeaderboard streamersInfo={[...streamersInfo]}/>
         </Box>
         <Footer/>
     </Flex>
