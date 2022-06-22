@@ -5,6 +5,7 @@ import Header from '../components/header'
 import Footer from '../components/footer'
 import SubLeaderboard  from '../components/sub-leaderboard'
 import { GetServerSideProps  } from 'next'
+import { HomePageProps } from '../utils/types'
 import axios from 'axios'
 import useSWR from 'swr'
 
@@ -29,9 +30,7 @@ export const getServerSideProps: GetServerSideProps  = async(context) => {
   }
 }
 
-interface HomePageProps {
-  streamersInfo: Streamer[]
-}
+
 
 const Home: NextPage<HomePageProps> = (props) => {
 

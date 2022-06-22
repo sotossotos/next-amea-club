@@ -1,15 +1,7 @@
 import type { NextApiRequest, NextApiResponse } from "next"
 import axios, { AxiosRequestConfig, AxiosResponse } from 'axios'
+import { Streamer } from '../../utils/types'
 
-interface Streamer {
-  is_live: boolean
-  current_viewers:number
-  username: string
-  channel_url: string
-  profile_pic:string
-  followers: number
-  subscriber_num: number
-}
 
 const streamerInfo = async(req: NextApiRequest, res: NextApiResponse) => {
 

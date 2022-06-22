@@ -3,20 +3,8 @@ import { Flex, Link, Heading, ThemeUIStyleObject } from 'theme-ui'
 import styled from 'styled-components'
 import {AiFillStar,AiFillHeart,AiFillEye} from 'react-icons/ai'
 import {VscCircleFilled} from 'react-icons/vsc'
+import { SubLeaderboardProps, Streamer } from '../utils/types'
 import Image from 'next/image'
-
-interface Streamer {
-  is_live: boolean
-  current_viewers:number
-  username: string
-  channel_url: string
-  profile_pic: string
-  followers: number
-  subscriber_num: number
-}
-interface SubLeaderboardProps {
-  streamersInfo: Streamer[]
-}
 
 const wrapperSx: ThemeUIStyleObject = {
   marginTop:'2.75rem',

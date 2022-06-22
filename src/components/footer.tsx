@@ -5,14 +5,12 @@ import { useBreakpointIndex } from '@theme-ui/match-media'
 const wrapperSx: ThemeUIStyleObject = {
     backgroundColor: '#1E2128',
     position:'relative',
-    bottom:'0',
-    // justifyContent:'flex-end'
+    bottom:'0'
 }
 
 const footerSx: ThemeUIStyleObject = {
     marginTop:['0.9rem','0.8rem','0.7rem'],
     marginBottom:['1.56rem','1.35rem','1.2rem'],
-    // marginX: ['1wv','9wv','18vw'],
     justifyContent:'center',
     width:'100vw'
 }
