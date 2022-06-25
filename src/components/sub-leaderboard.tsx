@@ -92,7 +92,7 @@ const SubLeaderboard: React.FC<SubLeaderboardProps> = (props) => {
   const sortedStreamersDescending = props.streamersInfo.sort((curr,next)=>next.subscriber_num-curr.subscriber_num)
   return(
     <Flex sx={wrapperSx}>
-      <Heading sx={leaderboardTitleSx}>Subs Leaderboard</Heading>
+      <Heading sx={leaderboardTitleSx}>AMEA Trovo</Heading>
       {sortedStreamersDescending.map((item: Streamer,index:number) =>(
         <Flex sx={streamerCardSx(item.is_live)} key={`streamer-card-${index}`}>
           <Link sx={{position:'relative'}} href={`${item.channel_url}`} target='_blank'>
