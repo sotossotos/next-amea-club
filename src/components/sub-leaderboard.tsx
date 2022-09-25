@@ -89,6 +89,21 @@ const ViewerNumberSx: ThemeUIStyleObject = {
   fontSize:['1rem','1.25rem','1.6rem'],
 }
 const SubLeaderboard: React.FC<SubLeaderboardProps> = (props) => {
+  const tzanetosNicks = ['Mazonetos','Kokonetos','Katsaridetos','Tzanetos','Keramidetos']
+
+  const tzanetosPick = tzanetosNicks[Math.floor(Math.random()*tzanetosNicks.length)]
+
+  const mapUserToName = new Map<string,string>([
+    ['PerfectBalance1','PerfectBalance'],
+    ['AerakisMono','Ameakis'],
+    ['Parentalcontrol','Parentalcontrol'],
+    ['tzanetostzanetos_2',tzanetosPick],
+    ['gusino','Guzinokefalos'],
+    ['Sefiroman','Sefiromea'],
+    ['pikachu__official','Pikachu']
+
+  ])
+
   const sortedStreamersDescending = props.streamersInfo.sort((curr,next)=>next.subscriber_num-curr.subscriber_num)
   return(
     <Flex sx={wrapperSx}>
@@ -99,7 +114,7 @@ const SubLeaderboard: React.FC<SubLeaderboardProps> = (props) => {
             <Image style={profilePicSx} src={`${item.profile_pic}`} alt='profile-pic' width='64' height='64'/>
             {item.is_live && <LiveIcon size={18}/>}
           </Link>
-          <Heading sx={usernameTitleSx}>{item.username}</Heading>
+          <Heading sx={usernameTitleSx}>{mapUserToName.get(item.username)}</Heading>
           <FollowHeart size={32}/>
           <Heading sx={FollowNumberSx}>{(item.followers/1000).toFixed(1)}K</Heading>
           {item.is_live &&(
