@@ -11,6 +11,7 @@ Main purpose is to display/promote the anthem of hayate network. It may also dis
 - gusino
 - Parentalcontrol
 - tzanetostzanetos_2
+- pikachu__official
 
 ## Getting Started
 
