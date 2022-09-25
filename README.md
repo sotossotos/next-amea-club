@@ -10,8 +10,7 @@ Main purpose is to display/promote the anthem of hayate network. It may also dis
 - AerakisMono
 - gusino
 - Parentalcontrol
-- panagiwwta_
-- iwannaaa98
+- tzanetostzanetos_2
 
 ## Getting Started
 
