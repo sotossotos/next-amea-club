@@ -38,15 +38,19 @@ const Home: NextPage<HomePageProps> = (props) => {
   
   const streamersInfo = data ? data.streamersInfo:props.streamersInfo
   const pageSx:ThemeUIStyleObject = {
-    minHeight:'100vh',
+    height:'100vh',
     flexDirection:'column',
-    position:'relative'
+    display:'flex'
+  }
+
+  const contentSx: ThemeUIStyleObject = {
+    flex: '1 0 auto'
   }
 
   return (
     <Flex sx={pageSx}>
         <Header/>
-        <Box>
+        <Box sx={contentSx}>
           <Anthem/>
           <SubLeaderboard streamersInfo={[...streamersInfo]}/>
         </Box>
