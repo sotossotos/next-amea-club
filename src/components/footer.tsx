@@ -4,8 +4,7 @@ import { useBreakpointIndex } from '@theme-ui/match-media'
 
 const wrapperSx: ThemeUIStyleObject = {
     backgroundColor: '#1E2128',
-    position:'relative',
-    bottom:'0'
+    flexShrink:0
 }
 
 const footerSx: ThemeUIStyleObject = {
