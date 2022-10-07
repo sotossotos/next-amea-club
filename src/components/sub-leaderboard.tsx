@@ -90,8 +90,10 @@ const ViewerNumberSx: ThemeUIStyleObject = {
 }
 const SubLeaderboard: React.FC<SubLeaderboardProps> = (props) => {
   const tzanetosNicks = ['Mazonetos','Kokonetos','Katsaridetos','Tzanetos','Keramidetos']
+  const piperakosNicks = ['P1perakos', 'Peris', 'El Truco', 'Truc Truc']
 
   const tzanetosPick = tzanetosNicks[Math.floor(Math.random()*tzanetosNicks.length)]
+  const piperakosPick = piperakosNicks[Math.floor(Math.random()*piperakosNicks.length)]
 
   const mapUserToName = new Map<string,string>([
     ['PerfectBalance1','PerfectBalance'],
@@ -100,8 +102,8 @@ const SubLeaderboard: React.FC<SubLeaderboardProps> = (props) => {
     ['tzanetostzanetos_2',tzanetosPick],
     ['gusino','Guzinokefalos'],
     ['Sefiroman','Sefiromea'],
-    ['pikachu__official','Pikachu']
-
+    ['pikachu__official','Pikachu'],
+    ['boomerakos',piperakosPick],
   ])
 
   const sortedStreamersDescending = props.streamersInfo.sort((curr,next)=>next.subscriber_num-curr.subscriber_num)
