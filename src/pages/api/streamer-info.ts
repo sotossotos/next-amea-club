@@ -5,7 +5,7 @@ import { Streamer } from '../../utils/types'
 
 const streamerInfo = async(req: NextApiRequest, res: NextApiResponse) => {
 
-  const usernames:string[] = ['PerfectBalance1','AerakisMono','Parentalcontrol','tzanetostzanetos_2','Sefiroman','pikachu__official','boomerakos']
+  const usernames:string[] = ['PerfectBalance1','AerakisMono','Parentalcontrol','tzanetostzanetos_2','pikachu__official','boomerakos']
   const trovo_url = 'https://open-api.trovo.live/openplatform/channels/id'
   const requestConfig: AxiosRequestConfig = {
       headers: {
