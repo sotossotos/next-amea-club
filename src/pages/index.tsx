@@ -38,7 +38,7 @@ const Home: NextPage<HomePageProps> = (props) => {
         <Header/>
         <Box sx={contentSx}>
           <Anthem/>
-          {streamersInfo ? <SubLeaderboard streamersInfo={[...streamersInfo]}/>:
+          {/* {streamersInfo ? <SubLeaderboard streamersInfo={[...streamersInfo]}/>:
           <Flex sx={loadingWrapperSx}>
             <ColorRing
               visible={true}
@@ -49,7 +49,7 @@ const Home: NextPage<HomePageProps> = (props) => {
               wrapperClass="blocks-wrapper"
               colors={['white', 'white', 'white', 'white', 'white']}
             />
-          </Flex>}
+          </Flex>} */}
         </Box>
         <Footer/>
     </Flex>
