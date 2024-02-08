@@ -38,7 +38,7 @@ const Footer = () => {
     return (
         <Flex sx = {wrapperSx}>
             <Flex sx= { footerSx }>
-                <Link sx={footerTitleSx} href={'https://www.youtube.com/channel/UCJrwvP4Hgkq2_YJB8veP-4w'} target= '_blank'>Hayate Network © 2022</Link>
+                <Link sx={footerTitleSx} href={'https://www.youtube.com/channel/UCJrwvP4Hgkq2_YJB8veP-4w'} target= '_blank'>Hayate Network</Link>
                 {/* <Text sx={creatorSx}>by CynicalSoToS</Text> */}
             </Flex>
         </Flex>
