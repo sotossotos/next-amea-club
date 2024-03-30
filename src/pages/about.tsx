@@ -11,7 +11,7 @@ export const getStaticProps: GetStaticProps = async() => {
 const About: NextPage = ({usernames}: InferGetStaticPropsType<typeof getStaticProps>) => {
   return (
     <div>
-      Μπράβο είσαι μάγκας που το βρήκες!
+      Μπράβο είσαι μάγκας που το βρήκες! ;)
     </div> 
   )
 }
