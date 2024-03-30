@@ -13,9 +13,9 @@ const fetcher = (url: string) => axios.get(url).then(r => r.data)
 
 const Home: NextPage<HomePageProps> = (props) => {
 
-  const { data } = useSWR('/api/streamer-info',fetcher,{ refreshInterval: 5000 })
+  // const { data } = useSWR('/api/streamer-info',fetcher,{ refreshInterval: 5000 })
   
-  const streamersInfo = data ? data.streamersInfo : undefined
+  // const streamersInfo = data ? data.streamersInfo : undefined
 
   const pageSx:ThemeUIStyleObject = {
     height:'100vh',
