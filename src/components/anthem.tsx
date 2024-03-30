@@ -47,9 +47,9 @@ const Anthem = () => {
 
     return (
         <Flex sx={wrapperSx}>
-            <Heading sx={anthemTitleSx}> Hayate Network New Anthem </Heading>
+            <Heading sx={anthemTitleSx}> FREE Hayate Network </Heading>
             <YouTube videoId="ipEKFJIMqdg" opts={opts} onReady={onPlayerReady}/>
-            <Heading sx={anthemSubTitleSx}>RIPPERONI</Heading>
+            <Heading sx={anthemSubTitleSx}>#FREE-HAYATE</Heading>
         </Flex>
   )
 }
